@@ -2,12 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Auth from './hoc/auth';
 
-import LandingPage from './components/views/LandingPage/LandingPage';
-import LoginPage from './components/views/LoginPage/LoginPage';
-import RegisterPage from './components/views/RegisterPage/RegisterPage';
-import AdminPage from './components/views/AdminPage/AdminPage';
-import { GuestbookPage } from './components/views/GuestbookPage';
-import { QuestionPage } from './components/views/QuestionPage' 
+import LandingPage from './pages/LandingPage/LandingPage';
+import LoginPage from './pages/LoginPage/LoginPage';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
+import AdminPage from './pages/AdminPage/AdminPage';
+import { GuestbookPage } from './pages/GuestbookPage';
+import { QuestionPage } from './pages/QuestionPage' 
 
 // const AuthLandingPage = Auth(LandingPage, null);
 // const AuthLoginPage = Auth(LoginPage, false);

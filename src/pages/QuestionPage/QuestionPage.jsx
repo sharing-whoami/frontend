@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
-import getTodayDate from '../../../utils/getTodayDate';
-import { getQuestion } from "../../../_actions/questionAction";
+import getTodayDate from '../../utils/getTodayDate';
+import Header from "../../components/Header"
 
 function QuestionPage() {
     const dispatch = useDispatch();
@@ -94,6 +94,7 @@ function QuestionPage() {
 
     return (
         <div>
+            <Header/>
             <Question todayDate={todayDate} question={question} />
             <div>
                 {answerId && !modify
