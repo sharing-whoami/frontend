@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch} from 'react-redux';
-import { loginUser } from '../../../_actions/loginAction'
+import { loginUser } from '../../../_actions/authAction'
 
 function LoginPage(props) {
   const dispatch = useDispatch()
@@ -48,4 +48,4 @@ function LoginPage(props) {
   )
 }
 
-export default LoginPage;
+export default  LoginPage;
