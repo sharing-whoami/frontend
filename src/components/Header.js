@@ -7,6 +7,7 @@ function Header() {
           <Link to="/login">로그인</Link>
             <Link to="/register">회원가입</Link>
             <Link to="/question">오늘의 질문</Link>
+            <Link to="/answer">오늘의 답변</Link>
       </header>
   )
 }

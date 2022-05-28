@@ -1,4 +1,4 @@
-import  todayDate from '../utils/getTodayDate'
+import  todayDate from '../../utils/getTodayDate'
 
 function Question({ question }) {
     return (

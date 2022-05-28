@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import getTodayDate from '../../utils/getTodayDate';
-import Header from "../../components/Header"
+import Header from "../Header"
+import Question from './Question';
 
 function QuestionPage() {
     const dispatch = useDispatch();
@@ -13,7 +14,7 @@ function QuestionPage() {
 
     const [question, setQuestion] = useState("");
     const [answerId, setAnswerId] = useState("");
-    const [answer, setAnswer] = useState("");
+    const [answerContents, setAnswerContents] = useState("");
     const [tag, setTag] = useState("");
     const [tagId, setTagId] = useState("");
     const [answerInput, setAnswerInput] = useState("");
@@ -41,25 +42,16 @@ function QuestionPage() {
 
         setQuestion(res.question);
         setAnswerId(res.answerId);
-        setAnswer(res.answerContents);
+        setAnswerContents(res.answerContents);
         setTagId(res.tagId)
         setTag(res.tagContents);
         setModify(false);
     }, []);
 
-    // 질문
-    function Question({ todayDate, question }) {
-        return (
-            <div>
-                <p>{todayDate}</p>
-                <p>Q.{question}</p>
-            </div>
-        )
-    }
     // 답변
     function Answer() {
         return (
-            <p>A. {answer}</p>
+            <p>A. {answerContents}</p>
         )
     }
 
@@ -85,7 +77,7 @@ function QuestionPage() {
 
     const onConfirm = () => {
         // 서버에 전송 후 완료되었을 때
-        setAnswer(answerInput);
+        setAnswerContents(answerInput);
         setTag(tagInput);
         setTagInput("");
         setAnswerInput("");
@@ -104,10 +96,10 @@ function QuestionPage() {
                         <p><button onClick={onModify}>수정</button></p>
                     </div>
                     : <div>
-                        <p><input type="text" placeholder={answer ? answer : '내용을입력해주세요'} value={answerInput}
+                        <p>A.<input type="text" placeholder={answerContents ? answerContents : '내용을입력해주세요'} value={answerInput}
                             onChange={answerInputOnChange}
                         /></p>
-                        <p> <input type="text" placeholder={tag ? tag : '내용을 입력해주세요'} value={tagInput} onChange={tagInputOnChange} />
+                        <p># <input type="text" placeholder={tag ? tag : '내용을 입력해주세요'} value={tagInput} onChange={tagInputOnChange} />
                         </p>
                         <p> <button onClick={onConfirm}>완료</button></p>
                     </div>
@@ -128,9 +120,6 @@ function QuestionPage() {
 tag 테이블에서 answerId 를 foreign key 로 참조해 tag 들을 가져옴
 조회한 답글이 있는 경우:  
 조회한 답글이 없는 경우: 
-
-
-
 */
 
 export { QuestionPage }
