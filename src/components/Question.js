@@ -1,7 +1,9 @@
-function Question({ todayDate, question }) {
+import  todayDate from '../utils/getTodayDate'
+
+function Question({ question }) {
     return (
         <div>
-            <p>{todayDate}</p>
+            <p>{todayDate()}</p>
             <p>Q.{question}</p>
         </div>
     )

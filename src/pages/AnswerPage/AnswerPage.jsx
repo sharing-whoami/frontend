@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from "react-router-dom";
 // import { useDispatch } from 'react-redux';
 import Question from '../../components/Question';
-import getTodayDate from '../../utils/getTodayDate';
 import Answer from '../../components/Answer';
 
 function AnswerPage(props) {
     //   const dispatch = useDispatch()
     const [question, setQuestion] = useState("");
     const [answers, setAnswers] = useState([]);
-    const todayDate = getTodayDate();
 
     useEffect(() => {
         const res = {
@@ -37,8 +36,11 @@ function AnswerPage(props) {
             <div>
                 {
                     answers.map(answer => (
+                        <div> 
                         <Answer answer={answer} key={answer.answerId} />
-                    ))
+                        <Link to={`/answer/${answer.answerId}/comments`}>댓글 보기</Link>
+                        </div>
+                        ))
                 }
             </div>
         )
@@ -46,7 +48,7 @@ function AnswerPage(props) {
 
     return (
         <div>
-            <Question todayDate={todayDate} question={question}/>
+            <Question question={question}/>
             <AnswerList answers = {answers}/>
         </div>
     )
