@@ -6,10 +6,10 @@ import LandingPage from './components/LandingPage';
 import LoginPage from './components/Login/LoginPage';
 import RegisterPage from './components/Register/RegisterPage';
 import AdminPage from './components/Admin/AdminPage';
-import { GuestbookPage } from './components/Guestbook';
-import { QuestionPage } from './components/Question' 
-import { AnswerPage } from './components/Answer';
-import { CommentPage } from './components/Comment';
+import GuestbookPage from './components/Guestbook/GuestbookPage';
+import QuestionPage from './components/Question/QuestionPage' 
+import AnswerPage from './components/Answer/AnswerPage';
+import CommentPage from './components/Comment/CommentPage';
 // const AuthLandingPage = Auth(LandingPage, null);
 // const AuthLoginPage = Auth(LoginPage, false);
 // const AuthRegisterPage = Auth(RegisterPage, false);

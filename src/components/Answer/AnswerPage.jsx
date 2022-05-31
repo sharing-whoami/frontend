@@ -69,4 +69,4 @@ function AnswerPage(props) {
     )
 }
 
-export { AnswerPage };
+export default AnswerPage;

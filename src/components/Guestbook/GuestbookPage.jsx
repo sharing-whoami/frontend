@@ -109,4 +109,4 @@ function GuestbookPage () {
     );
 }
 
-export {GuestbookPage}
+export default GuestbookPage;

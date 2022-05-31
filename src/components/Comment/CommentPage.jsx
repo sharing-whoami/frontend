@@ -25,6 +25,7 @@ function CommentPage() {
     });
 
     useEffect(() => {
+        console.log('생성됨');
         const res = {
             question: "코딩하는 이유",
             answerId: "1",
@@ -56,6 +57,9 @@ function CommentPage() {
             isLiked: false
         });
         setQuestion(res.question);
+        return () => {
+            console.log('삭제함');
+        }
     },[]);
 
     // current 로 가져올 id 
@@ -125,4 +129,4 @@ function CommentPage() {
     )
 }
     
-export {CommentPage};
+export default CommentPage;
